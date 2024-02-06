@@ -1,0 +1,78 @@
+<!-- gustave.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gustave's Invitation</title>
+    <link rel="stylesheet" href="terminal.css">
+</head>
+<body>
+    <div class="container">
+        <pre id="invitation"></pre>
+    </div>
+    <audio id="typingSound" src="typing_sound.mp3" preload="auto"></audio>
+    <script>
+        const invitationText = `
+           _____________________________________________________
+          /                                                     \\
+         |   CONFIDENTIAL                                         |
+         |   Space Salvage Crew Role Profile                       |
+         |   Role Title: Strategic Navigator                       |
+         |   Crew Member: Gustave [Redacted]                       |
+         |   Mission Brief:                                       |
+         |                                                       |
+         |   Attention Gustave,                                    |
+         |                                                       |
+         |   Your exceptional navigation skills and strategic     |
+         |   insights have been vital to our space salvage crew's |
+         |   success. Your ability to chart the course through    |
+         |   hazardous territories sets you apart as a key asset  |
+         |   to our team.                                         |
+         |                                                       |
+         |   We hereby invite you to join us for a crucial       |
+         |   salvage operation in the outer reaches of the        |
+         |   galaxy. Hosted by Lethal Company, this mission will  |
+         |   test our crew's ability to navigate through          |
+         |   treacherous space debris and extract valuable        |
+         |   resources.                                           |
+         |                                                       |
+         |   Please note that this mission will incorporate       |
+         |   custom modifications to enhance the experience and   |
+         |   provide new challenges.                              |
+         |                                                       |
+         |   Your presence is required on February 10 at          |
+         |   7:00 pm for mission briefing. Your expertise is     |
+         |   essential to our success.                            |
+         |                                                       |
+         |   Regards,                                             |
+         |   THE COMPANY                                         |
+         \\_______________________________________________________/
+              \\                                                 /
+               \\_______________________________________________/
+        `;
+        let index = 0;
+
+        function typeInvitation() {
+            const invitationElement = document.getElementById("invitation");
+            invitationElement.innerHTML += invitationText.charAt(index);
+            playTypingSound();
+            index++;
+            if (index < invitationText.length) {
+                setTimeout(typeInvitation, 20); // Adjust typing speed here
+            }
+        }
+
+        function playTypingSound() {
+            const typingSound = document.getElementById("typingSound");
+            typingSound.play();
+        }
+
+        typeInvitation();
+    </script>
+</body>
+</html>
+
+
+

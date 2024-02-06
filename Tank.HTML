@@ -1,0 +1,73 @@
+<!-- teancum.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teancum's Invitation</title>
+    <link rel="stylesheet" href="terminal.css">
+</head>
+<body>
+    <div class="container">
+        <pre id="invitation"></pre>
+    </div>
+    <audio id="typingSound" src="typing_sound.mp3" preload="auto"></audio>
+    <script>
+        const invitationText = `
+           _____________________________________________________
+          /                                                     \\
+         |   CONFIDENTIAL                                         |
+         |   Space Salvage Crew Role Profile                       |
+         |   Role Title: Operations Director                       |
+         |   Crew Member: Teancum [Redacted]                       |
+         |   Mission Brief:                                       |
+         |                                                       |
+         |   Attention Teancum,                                    |
+         |                                                       |
+         |   Your operational expertise and leadership skills     |
+         |   have been critical to the success of our space       |
+         |   salvage crew. Your ability to manage complex         |
+         |   salvage operations with efficiency is commendable.   |
+         |                                                       |
+         |   We extend an invitation to you for a high-priority  |
+         |   salvage mission, coordinated by Lethal Company.      |
+         |   This mission will require precise execution of       |
+         |   operational protocols and strategic decision-making  |
+         |   to ensure success.                                   |
+         |                                                       |
+         |   Please note that this mission will involve the use   |
+         |   of custom modifications to simulate real-world      |
+         |   scenarios and enhance the experience.                |
+         |                                                       |
+         |   Your attendance is required on February 10 at       |
+         |   7:00 pm for mission briefing. Your leadership is    |
+         |   indispensable to our objectives.                     |
+         |                                                       |
+         |   Regards,                                             |
+         |   THE COMPANY                                         |
+         \\_______________________________________________________/
+              \\                                                 /
+               \\_______________________________________________/
+        `;
+        let index = 0;
+
+        function typeInvitation() {
+            const invitationElement = document.getElementById("invitation");
+            invitationElement.innerHTML += invitationText.charAt(index);
+            playTypingSound();
+            index++;
+            if (index < invitationText.length) {
+                setTimeout(typeInvitation, 20); // Adjust typing speed here
+            }
+        }
+
+        function playTypingSound() {
+            const typingSound = document.getElementById("typingSound");
+            typingSound.play();
+        }
+
+        typeInvitation();
+    </script>
+</body>
+</html>

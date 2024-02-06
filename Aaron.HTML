@@ -1,0 +1,73 @@
+<!-- aaron.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aaron's Invitation</title>
+    <link rel="stylesheet" href="terminal.css">
+</head>
+<body>
+    <div class="container">
+        <pre id="invitation"></pre>
+    </div>
+    <audio id="typingSound" src="typing_sound.mp3" preload="auto"></audio>
+    <script>
+        const invitationText = `
+           _____________________________________________________
+          /                                                     \\
+         |   CONFIDENTIAL                                         |
+         |   Space Salvage Crew Role Profile                       |
+         |   Role Title: Data Analyst                              |
+         |   Crew Member: Aaron [Redacted]                         |
+         |   Mission Brief:                                       |
+         |                                                       |
+         |   Attention Aaron,                                     |
+         |                                                       |
+         |   Your analytical skills and attention to detail       |
+         |   have been invaluable to our space salvage crew.      |
+         |   Your ability to analyze complex data sets            |
+         |   contributes significantly to our operations.          |
+         |                                                       |
+         |   We invite you to participate in a data analysis      |
+         |   operation led by Lethal Company. This operation      |
+         |   aims to uncover valuable insights from salvage       |
+         |   data. Your expertise will be crucial to our success.  |
+         |                                                       |
+         |   Please note that this operation will utilize         |
+         |   custom modifications to enhance data visualization   |
+         |   and analytical capabilities.                          |
+         |                                                       |
+         |   Your attendance is required on February 10 at       |
+         |   7:00 pm for mission briefing. Your contributions    |
+         |   are essential to our mission.                        |
+         |                                                       |
+         |   Regards,                                             |
+         |   THE COMPANY                                         |
+         \\_______________________________________________________/
+              \\                                                 /
+               \\_______________________________________________/
+        `;
+        let index = 0;
+
+        function typeInvitation() {
+            const invitationElement = document.getElementById("invitation");
+            invitationElement.innerHTML += invitationText.charAt(index);
+            playTypingSound();
+            index++;
+            if (index < invitationText.length) {
+                setTimeout(typeInvitation, 20); // Adjust typing speed here
+            }
+        }
+
+        function playTypingSound() {
+            const typingSound = document.getElementById("typingSound");
+            typingSound.play();
+        }
+
+        typeInvitation();
+    </script>
+</body>
+</html>
+

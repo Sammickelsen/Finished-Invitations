@@ -1,0 +1,72 @@
+<!-- adam.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adam's Invitation</title>
+    <link rel="stylesheet" href="terminal.css">
+</head>
+<body>
+    <div class="container">
+        <pre id="invitation"></pre>
+    </div>
+    <audio id="typingSound" src="typing_sound.mp3" preload="auto"></audio>
+    <script>
+        const invitationText = `
+           _____________________________________________________
+          /                                                     \\
+         |   CONFIDENTIAL                                         |
+         |   Space Salvage Crew Role Profile                       |
+         |   Role Title: Marketing Specialist                      |
+         |   Crew Member: Adam [Redacted]                          |
+         |   Mission Brief:                                       |
+         |                                                       |
+         |   Attention Adam,                                      |
+         |                                                       |
+         |   Your creativity and strategic thinking have been    |
+         |   instrumental to our space salvage crew's success.    |
+         |   Your ability to develop impactful marketing          |
+         |   strategies sets our crew apart from competitors.      |
+         |                                                       |
+         |   We invite you to join us for a marketing campaign    |
+         |   simulation, organized by Lethal Company. This        |
+         |   simulation will test new messaging approaches and    |
+         |   strategies.                                          |
+         |                                                       |
+         |   Please note that this simulation will incorporate    |
+         |   custom modifications to introduce new challenges     |
+         |   and opportunities.                                   |
+         |                                                       |
+         |   Your attendance is required on February 10 at        |
+         |   7:00 pm for mission briefing. Your contributions     |
+         |   are key to our mission success.                      |
+         |                                                       |
+         |   Regards,                                             |
+         |   THE COMPANY                                         |
+         \\_______________________________________________________/
+              \\                                                 /
+               \\_______________________________________________/
+        `;
+        let index = 0;
+
+        function typeInvitation() {
+            const invitationElement = document.getElementById("invitation");
+            invitationElement.innerHTML += invitationText.charAt(index);
+            playTypingSound();
+            index++;
+            if (index < invitationText.length) {
+                setTimeout(typeInvitation, 20); // Adjust typing speed here
+            }
+        }
+
+        function playTypingSound() {
+            const typingSound = document.getElementById("typingSound");
+            typingSound.play();
+        }
+
+        typeInvitation();
+    </script>
+</body>
+</html>
