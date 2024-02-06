@@ -1,0 +1,40 @@
+body {
+    background-color: #000;
+    color: #0f0;
+    font-family: 'Courier New', Courier, monospace;
+    padding: 20px;
+    animation: flicker 0.05s infinite alternate-reverse;
+    text-align: center;
+    }
+
+    @keyframes flicker {
+        0% {
+            opacity: 1;
+        }
+        100% {
+            opacity: 0.6;
+        }
+    }
+
+
+.container {
+    border: 1px solid #0f0;
+    padding: 20px;
+    background-color: #000;
+}
+
+h1 {
+    color: #0f0;
+}
+
+p {
+    margin-bottom: 10px;
+}
+
+a {
+    color: #0f0;
+}
+
+a:hover {
+    text-decoration: underline;
+}

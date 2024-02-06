@@ -5,7 +5,18 @@ body {
     color: #0f0;
     font-family: 'Courier New', Courier, monospace;
     padding: 20px;
-}
+    animation: flicker 0.05s infinite alternate-reverse;
+    }
+
+    @keyframes flicker {
+        0% {
+            opacity: 1;
+        }
+        100% {
+            opacity: 0.6;
+        }
+    }
+
 
 .container {
     border: 1px solid #0f0;
